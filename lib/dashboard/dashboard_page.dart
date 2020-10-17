@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -54,48 +55,192 @@ class _DashboardPageState extends State<DashboardPage> {
                       topLeft: Radius.circular(32.0),
                     ),
                   ),
+                  child: Container(
+                    margin: EdgeInsets.symmetric(
+                      vertical: 21.0,
+                      horizontal: 16.0,
+                    ),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              '狀態監控',
+                              style: GoogleFonts.notoSans(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16,
+                                fontStyle: FontStyle.normal,
+                              ),
+                            ),
+                            Container(
+                              width: 60.0,
+                              height: 30.0,
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(24),
+                                ),
+                              ),
+                              child: Text(
+                                '+關注',
+                                style: GoogleFonts.notoSans(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 12,
+                                  fontStyle: FontStyle.normal,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 21.0,
+                        ),
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              for (var _ in [1, 2, 3, 4])
+                                Container(
+                                  width: 80.0,
+                                  height: 104.0,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(
+                                      12.0,
+                                    ),
+                                    border: Border.all(
+                                      color: Colors.blueAccent,
+                                    ),
+                                  ),
+                                ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: 45.0,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              '快速情境',
+                              style: GoogleFonts.notoSans(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16,
+                                fontStyle: FontStyle.normal,
+                              ),
+                            ),
+                            Container(
+                              width: 60.0,
+                              height: 30.0,
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(24),
+                                ),
+                              ),
+                              child: Text(
+                                '+新增',
+                                style: GoogleFonts.notoSans(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 12,
+                                  fontStyle: FontStyle.normal,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 21.0,
+                        ),
+                        Container(
+                          height: 68.0,
+                          child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: 3,
+                            itemBuilder: (_, __) => Container(
+                              margin: EdgeInsets.only(right: 8.0),
+                              width: 204.0,
+                              height: 68.0,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(
+                                  12.0,
+                                ),
+                                border: Border.all(
+                                  color: Colors.blueAccent,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 45.0,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              '常用開關',
+                              style: GoogleFonts.notoSans(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16,
+                                fontStyle: FontStyle.normal,
+                              ),
+                            ),
+                            Container(
+                              width: 60.0,
+                              height: 30.0,
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(24),
+                                ),
+                              ),
+                              child: Text(
+                                '+新增',
+                                style: GoogleFonts.notoSans(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 12,
+                                  fontStyle: FontStyle.normal,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 21.0,
+                        ),
+
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                width: double.infinity,
+                height: 84.0,
+                color: Colors.white,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    for (var _ in [1, 2, 3, 4, 5])
+                      Container(
+                        width: 50.0,
+                        height: 50.0,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.blueAccent),
+                        ),
+                      ),
+                  ],
                 ),
               )
             ],
           ),
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 1,
-        unselectedIconTheme: IconThemeData(
-          color: Color(0xFF777472),
-        ),
-        unselectedLabelStyle: GoogleFonts.notoSans(
-          fontSize: 10.0,
-          fontWeight: FontWeight.w600,
-          fontStyle: FontStyle.normal,
-          color: Color(0xFF777472),
-        ),
-        selectedIconTheme: IconThemeData(
-            color: Color(0xFFB8A85A),
-        ),
-        items: const<BottomNavigationBarItem> [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label:'首頁'
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label:'房間'
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label:'服務'
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label:'通知'
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label:'個人'
-          ),
-        ],
       ),
     );
   }
