@@ -1,6 +1,8 @@
+import 'package:flhtek_eng_app_2/screens/dashboard/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'constants.dart';
 import 'dashboard/dashboard_page.dart';
 
 void main() {
@@ -14,12 +16,17 @@ class MyApp extends StatelessWidget {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 //    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
     return MaterialApp(
-      title: 'EngFerqoApp',
+      title: 'EngFerqoCC',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.light(),
-      initialRoute: DashboardPage.id,
+      theme: ThemeData(
+        scaffoldBackgroundColor: kBackgroundColor,
+        primaryColor: kPrimaryColor,
+        textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor),
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      initialRoute: DashboardScreen.id,
       routes: {
-        DashboardPage.id: (context) => DashboardPage(),
+        DashboardScreen.id: (context) => DashboardScreen(),
       },
     );
   }
