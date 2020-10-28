@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:google_fonts/google_fonts.dart';
+// import 'package:google_fonts/google_fonts.dart';
 
 class DashboardPage extends StatefulWidget {
   static String id = 'dashboard_page';
@@ -28,21 +28,21 @@ class _DashboardPageState extends State<DashboardPage> {
                   children: [
                     Text(
                       'FERQO',
-                      style: GoogleFonts.montserrat(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500,
-                        fontStyle: FontStyle.normal,
-                        fontSize: 24,
-                      ),
+                      // style: GoogleFonts.montserrat(
+                      //   color: Colors.white,
+                      //   fontWeight: FontWeight.w500,
+                      //   fontStyle: FontStyle.normal,
+                      //   fontSize: 24,
+                      // ),
                     ),
                     Text(
                       '智慧家庭',
-                      style: GoogleFonts.montserrat(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500,
-                        fontStyle: FontStyle.normal,
-                        fontSize: 24,
-                      ),
+                      // style: GoogleFonts.montserrat(
+                      //   color: Colors.white,
+                      //   fontWeight: FontWeight.w500,
+                      //   fontStyle: FontStyle.normal,
+                      //   fontSize: 24,
+                      // ),
                     ),
                   ],
                 ),
@@ -67,11 +67,11 @@ class _DashboardPageState extends State<DashboardPage> {
                           children: [
                             Text(
                               '狀態監控',
-                              style: GoogleFonts.notoSans(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 16,
-                                fontStyle: FontStyle.normal,
-                              ),
+                              // style: GoogleFonts.notoSans(
+                              //   fontWeight: FontWeight.w500,
+                              //   fontSize: 16,
+                              //   fontStyle: FontStyle.normal,
+                              // ),
                             ),
                             Container(
                               width: 60.0,
@@ -85,11 +85,11 @@ class _DashboardPageState extends State<DashboardPage> {
                               ),
                               child: Text(
                                 '+關注',
-                                style: GoogleFonts.notoSans(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 12,
-                                  fontStyle: FontStyle.normal,
-                                ),
+                                // style: GoogleFonts.notoSans(
+                                //   fontWeight: FontWeight.w500,
+                                //   fontSize: 12,
+                                //   fontStyle: FontStyle.normal,
+                                // ),
                               ),
                             ),
                           ],
@@ -125,11 +125,11 @@ class _DashboardPageState extends State<DashboardPage> {
                           children: [
                             Text(
                               '快速情境',
-                              style: GoogleFonts.notoSans(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 16,
-                                fontStyle: FontStyle.normal,
-                              ),
+                              // style: GoogleFonts.notoSans(
+                              //   fontWeight: FontWeight.w500,
+                              //   fontSize: 16,
+                              //   fontStyle: FontStyle.normal,
+                              // ),
                             ),
                             Container(
                               width: 60.0,
@@ -143,11 +143,11 @@ class _DashboardPageState extends State<DashboardPage> {
                               ),
                               child: Text(
                                 '+新增',
-                                style: GoogleFonts.notoSans(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 12,
-                                  fontStyle: FontStyle.normal,
-                                ),
+                                // style: GoogleFonts.notoSans(
+                                //   fontWeight: FontWeight.w500,
+                                //   fontSize: 12,
+                                //   fontStyle: FontStyle.normal,
+                                // ),
                               ),
                             ),
                           ],
@@ -183,11 +183,11 @@ class _DashboardPageState extends State<DashboardPage> {
                           children: [
                             Text(
                               '常用開關',
-                              style: GoogleFonts.notoSans(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 16,
-                                fontStyle: FontStyle.normal,
-                              ),
+                              // style: GoogleFonts.notoSans(
+                              //   fontWeight: FontWeight.w500,
+                              //   fontSize: 16,
+                              //   fontStyle: FontStyle.normal,
+                              // ),
                             ),
                             Container(
                               width: 60.0,
@@ -201,11 +201,11 @@ class _DashboardPageState extends State<DashboardPage> {
                               ),
                               child: Text(
                                 '+新增',
-                                style: GoogleFonts.notoSans(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 12,
-                                  fontStyle: FontStyle.normal,
-                                ),
+                                // style: GoogleFonts.notoSans(
+                                //   fontWeight: FontWeight.w500,
+                                //   fontSize: 12,
+                                //   fontStyle: FontStyle.normal,
+                                // ),
                               ),
                             ),
                           ],

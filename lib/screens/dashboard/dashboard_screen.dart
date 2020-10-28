@@ -1,5 +1,11 @@
+import 'dart:ui';
 
+import 'package:flhtek_eng_app_2/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'components/header_with_more_btn.dart';
+import 'components/sensor_value_card.dart';
 
 class DashboardScreen extends StatelessWidget {
   static const String id = 'dashboard_screen';
@@ -9,10 +15,45 @@ class DashboardScreen extends StatelessWidget {
     return Scaffold(
       appBar: buildAppBar(),
       body: Container(
+        padding: EdgeInsets.only(
+            left: kDefaultPadding,
+            right: kDefaultPadding,
+            top: kDefaultPadding,
+            bottom: (kDefaultPadding * 2)),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20.0),
-          )
+            color: kBackgroundColor,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20),
+            )),
+        child: Column(
+          children: [
+            HeaderWithMoreBtn(header: '狀態監控'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SensorValueCard(
+                  place: '客廳',
+                  value: 24,
+                  iconData: FontAwesomeIcons.thermometerHalf,
+                ),
+                SensorValueCard(
+                  place: '客廳',
+                  value: 24,
+                  iconData: FontAwesomeIcons.thermometerHalf,
+                ),
+                SensorValueCard(
+                  place: '客廳',
+                  value: 24,
+                  iconData: FontAwesomeIcons.thermometerHalf,
+                ),
+                SensorValueCard(
+                  place: '客廳',
+                  value: 24,
+                  iconData: FontAwesomeIcons.thermometerHalf,
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
@@ -32,3 +73,6 @@ class DashboardScreen extends StatelessWidget {
     );
   }
 }
+
+
+
