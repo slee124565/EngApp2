@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 const kPrimaryColor = Color(0xFF595A5E);
 const kTextColor = Colors.black;
 const kBackgroundColor = Color(0xFFF4F4F4);
+const kSceneActivatedRingColor = Color(0xFFCCBF85);
+const kSceneActivatedDotColor = Color(0xFF14D59B);
+const kSceneDeactivatedRingColor = Color(0xFFDCDBDD);
+const kSceneDeactivatedDotColor = Color(0xFFDCDBDD);
 
 const kDefaultPadding = 16.0;
 const kHeaderTextSize = 16.0;

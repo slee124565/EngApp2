@@ -1,10 +1,12 @@
 import 'dart:ui';
 
 import 'package:flhtek_eng_app_2/constants.dart';
+import 'package:flhtek_eng_app_2/screens/dashboard/components/common_card.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'components/board_sensor.dart';
 import 'components/header_with_more_btn.dart';
+import 'components/scene_card.dart';
 import 'components/sensor_value_card.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -26,32 +28,29 @@ class DashboardScreen extends StatelessWidget {
               topLeft: Radius.circular(20),
             )),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            HeaderWithMoreBtn(header: '狀態監控'),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                SensorValueCard(
-                  place: '客廳',
-                  value: 24,
-                  iconData: FontAwesomeIcons.thermometerHalf,
+            BoardSensor(),
+            // Spacer(),
+            HeaderWithMoreBtn(
+              header: '情境.最愛',
+            ),
+            Expanded(
+              child: GridView.builder(
+                padding: EdgeInsets.zero,
+                itemCount: sceneData.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2
                 ),
-                SensorValueCard(
-                  place: '客廳',
-                  value: 24,
-                  iconData: FontAwesomeIcons.thermometerHalf,
+                // gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                //   childAspectRatio: 0.53,
+                //   crossAxisCount: 2,
+                // ),
+                itemBuilder: (context, index) => SceneCard(
+                  activated: sceneData[index]['activated'],
+                  sceneName: sceneData[index]['sceneName'],
                 ),
-                SensorValueCard(
-                  place: '客廳',
-                  value: 24,
-                  iconData: FontAwesomeIcons.thermometerHalf,
-                ),
-                SensorValueCard(
-                  place: '客廳',
-                  value: 24,
-                  iconData: FontAwesomeIcons.thermometerHalf,
-                ),
-              ],
+              ),
             ),
           ],
         ),
@@ -64,15 +63,47 @@ class DashboardScreen extends StatelessWidget {
       elevation: 0.0,
       automaticallyImplyLeading: false,
       centerTitle: false,
-      title: Image.asset(
-        'assets/images/ferqo_icon_logo.png',
-        height: 37.0,
-        alignment: Alignment.centerLeft,
-        color: Colors.white,
+      title: Column(
+        children: [
+          Image.asset(
+            'assets/images/ferqo_icon_logo.png',
+            height: 37.0,
+            alignment: Alignment.centerLeft,
+            color: Colors.white,
+          ),
+          SizedBox(
+            height: 24.0,
+          )
+        ],
       ),
     );
   }
 }
 
 
-
+List<Map<String, dynamic>> sceneData = [
+  {
+    'activated': true,
+    'sceneName': '到家了'
+  },
+  {
+    'activated': false,
+    'sceneName': '派對時間'
+  },
+  {
+    'activated': false,
+    'sceneName': '睡覺'
+  },
+  {
+    'activated': false,
+    'sceneName': '電影'
+  },
+  {
+    'activated': false,
+    'sceneName': '晨醒模式'
+  },
+  {
+    'activated': false,
+    'sceneName': '離開全關'
+  },
+];
